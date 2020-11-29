@@ -1,0 +1,55 @@
+{
+  "name": "MT",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "android:sbdev": "yarn run android --variant=mtsbdevDebug --appIdSuffix=sbdev",
+    "android:sbstage": "yarn run android --variant=mtsbstageDebug --appIdSuffix=sbstage",
+    "android:sbprod": "yarn run android --variant=mtsbprodDebug --appIdSuffix=sbprod",
+    "android:sb1dev": "yarn run android --variant=mtsb1devDebug --appIdSuffix=sb1dev",
+    "android:sb1stage": "yarn run android --variant=mtsb1stageDebug --appIdSuffix=sb1stage",
+    "android:sb1prod": "yarn run android --variant=mtsb1prodDebug --appIdSuffix=sb1prod",
+    "android:sb2dev": "yarn run android --variant=mtsb2devDebug --appIdSuffix=sb2dev",
+    "android:sb2stage": "yarn run android --variant=mtsb2stageDebug --appIdSuffix=sb2stage",
+    "android:sb2prod": "yarn run android --variant=mtsb2prodDebug --appIdSuffix=sb2prod",
+    "android:sb3dev": "yarn run android --variant=mtsb3devDebug --appIdSuffix=sb3dev",
+    "android:sb3stage": "yarn run android --variant=mtsb3stageDebug --appIdSuffix=sb3stage",
+    "android:sb3prod": "yarn run android --variant=mtsb3prodDebug --appIdSuffix=sb3prod"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.12.1",
+    "@react-native-community/clipboard": "^1.5.1",
+    "@react-native-firebase/app": "^8.4.7",
+    "@react-native-firebase/messaging": "^7.9.2",
+    "axios": "^0.19.0",
+    "jetifier": "^1.6.6",
+    "react": "16.13.1",
+    "react-native": "0.63.3",
+    "react-native-config": "^1.4.0",
+    "react-native-file-viewer": "^2.1.1",
+    "react-native-fs": "^2.16.2",
+    "react-native-pdf": "6.1.2",
+    "react-native-permissions": "^2.0.3",
+    "react-native-share": "^2.0.0",
+    "react-native-webview": "9.4.0",
+    "rn-fetch-blob": "^0.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.12.1",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "^0.64.0",
+    "react-test-renderer": "16.13.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

@@ -1,0 +1,75 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '10.0'
+
+target 'MT' do
+
+  $FirebaseSDKVersion = '6.33.0'
+
+  config = use_native_modules!
+
+  use_react_native!(:path => config["reactNativePath"])
+
+  pod 'FirebaseFirestore', :git => 'https://github.com/invertase/firestore-ios-sdk-frameworks.git', :tag => $FirebaseSDKVersion
+  pod 'FirebaseInstanceID', :git => 'https://github.com/tomkelsey/firebase-ios-sdk.git', :branch => 'release-6.33.0-patched'
+
+  pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
+  pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
+  pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
+
+  permissions_path = '../node_modules/react-native-permissions/ios'
+
+  pod 'Permission-Notifications', :path => "#{permissions_path}/Notifications.podspec"
+
+  pod 'react-native-config', :path => '../node_modules/react-native-config'
+
+  target 'MTTests' do
+    inherit! :complete
+    # Pods for testing
+  end
+
+  target 'MT-SB-Dev' do
+    # Pods for MT-SB-Dev
+  end
+
+  target 'MT-SB-Stage' do
+    # Pods for MT-SB-Stage
+  end
+
+  target 'MT-SB1-Stage' do
+    # Pods for MT-SB1-Stage
+  end
+
+  target 'MT-SB2-Stage' do
+    # Pods for MT-SB2-Stage
+  end
+
+  target 'MT-SB3-Stage' do
+    # Pods for MT-SB3-Stage
+  end
+
+  target 'MT-SB1-Prod' do
+    # Pods for MT-SB1-Prod
+  end
+
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable these next few lines.
+  use_flipper!
+  post_install do |installer|
+    flipper_post_install(installer)
+  end
+end
+
+target 'MT-tvOS' do
+  # Pods for MT-tvOS
+
+  target 'MT-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+end

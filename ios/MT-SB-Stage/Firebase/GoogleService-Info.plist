@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>764115095725-nvn23bss7f56elhefsrrq6mdjlta5m3m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.764115095725-nvn23bss7f56elhefsrrq6mdjlta5m3m</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>764115095725-ko9o7643a9m20tnqot5g3fdj0gftkskn.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC4mIT5PXrWAij35U7Mzh-ZzcA-vcqdxAg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>764115095725</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>org.reactjs.native.mtsbstage</string>
+	<key>PROJECT_ID</key>
+	<string>stramplerbande-2c842</string>
+	<key>STORAGE_BUCKET</key>
+	<string>stramplerbande-2c842.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:764115095725:ios:52613b187fdf343006f624</string>
+	<key>DATABASE_URL</key>
+	<string>https://stramplerbande-2c842.firebaseio.com</string>
+</dict>
+</plist>
