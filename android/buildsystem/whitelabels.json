@@ -1,0 +1,52 @@
+{
+	"list": [
+		{
+			"flavor_name": "mtsbdev",
+			"application_id_suffix": "sbdev"
+		},
+		{
+			"flavor_name": "mtsbstage",
+			"application_id_suffix": "sbstage"
+		},
+		{
+			"flavor_name": "mtsbprod",
+			"application_id_suffix": "sbprod"
+		},
+		{
+			"flavor_name": "mtsb1dev",
+			"application_id_suffix": "sb1dev"
+		},
+		{
+			"flavor_name": "mtsb1stage",
+			"application_id_suffix": "sb1stage"
+		},
+		{
+			"flavor_name": "mtsb1prod",
+			"application_id_suffix": "sb1prod"
+		},
+		{
+			"flavor_name": "mtsb2dev",
+			"application_id_suffix": "sb2dev"
+		},
+		{
+			"flavor_name": "mtsb2stage",
+			"application_id_suffix": "sb2stage"
+		},
+		{
+			"flavor_name": "mtsb2prod",
+			"application_id_suffix": "sb2prod"
+		},
+		{
+			"flavor_name": "mtsb3dev",
+			"application_id_suffix": "sb3dev"
+		},
+		{
+			"flavor_name": "mtsb3stage",
+			"application_id_suffix": "sb3stage"
+		},
+		{
+			"flavor_name": "mtsb3prod",
+			"application_id_suffix": "sb3prod"
+		}
+	]
+}

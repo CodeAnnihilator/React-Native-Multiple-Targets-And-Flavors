@@ -1,0 +1,22 @@
+default_platform(:android)
+
+platform :android do
+
+	desc 'test android lane'
+	lane :beta do
+		require 'json'
+
+		file = File.read '../buildsystem/whitelabels.json'
+		data = JSON.parse(file)
+
+		puts data['list'][0]['bundle_id']
+
+		data['list'].each do |whitelabel|
+			puts "package_name: com.mt.#{whitelabel['application_id_suffix']}"
+			puts "skip_upload_images: true"
+			puts "skip_upload_screenshots: true"
+			puts "apk: app/build/outputs/apk/app-#{whitelabel['flavor_name']}-release.apk"
+			puts '--NEXT--'
+		end
+	end
+end

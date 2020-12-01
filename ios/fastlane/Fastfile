@@ -46,4 +46,15 @@ platform :ios do
 		)
 
 	end
+
+	# after_all do |lane|
+	# 	slack(
+	# 		message: 'Successfully deployed new app'
+	# 	)
+
+	# error do |lane, exception|
+	# 	slack(
+	# 		message: exception.message,
+	# 		success: false
+	# 	)
 end
