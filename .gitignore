@@ -19,10 +19,12 @@ xcuserdata
 DerivedData
 *.hmap
 *.ipa
+*.zip
 *.xcuserstate
 
 # Android/IntelliJ
 #
+*.hprof
 build/
 .idea
 .gradle
