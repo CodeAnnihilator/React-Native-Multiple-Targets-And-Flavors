@@ -2,21 +2,43 @@ default_platform(:android)
 
 platform :android do
 
+	# before_all do
+	# 	gradle(task: 'clean')
+	# end
+
 	desc 'test android lane'
 	lane :beta do
-		require 'json'
 
-		file = File.read '../buildsystem/whitelabels.json'
-		data = JSON.parse(file)
+		# gradle(
+		# 	task: 'whitelabelRelease'
+		# )
 
-		puts data['list'][0]['bundle_id']
+		begin
 
-		data['list'].each do |whitelabel|
-			puts "package_name: com.mt.#{whitelabel['application_id_suffix']}"
-			puts "skip_upload_images: true"
-			puts "skip_upload_screenshots: true"
-			puts "apk: app/build/outputs/apk/app-#{whitelabel['flavor_name']}-release.apk"
-			puts '--NEXT--'
+			require 'json'
+
+			file = File.read '../buildsystem/whitelabels.json'
+			data = JSON.parse(file)
+
+			data['list'].each do |whitelabel|
+				begin
+					puts "package_name: com.mt.#{whitelabel['application_id_suffix']}"
+					puts "skip_upload_images: true"
+					puts "skip_upload_screenshots: true"
+					puts "apk: app/build/outputs/apk/app-#{whitelabel['flavor_name']}-release.apk"
+					puts '--NEXT--'
+					rescue => ex
+						puts ex
+						slack(
+							message: "Error uploading => #{/([^\/]*)$/.match(apk)} #{get_version_name} - #{get_version_code}: #{ex}",
+							slack_url: 'https://hooks.slack.com/services/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',
+							success: false,
+							default_payloads: [:git_branch, :lane, :test_result]
+						)
+				end
+			end
+		rescue => ex
+			puts ex
 		end
 	end
 end

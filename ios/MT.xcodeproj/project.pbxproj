@@ -2445,7 +2445,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.mtsbonestage;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.mtsbonestage.one;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -2470,7 +2470,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.mtsbonestage;
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.mtsbonestage.one;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

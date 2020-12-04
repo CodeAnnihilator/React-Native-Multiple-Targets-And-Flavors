@@ -2,14 +2,16 @@ default_platform(:ios)
 
 platform :ios do
 
+	# before_all do
+	# 	slack(
+	# 		message: 'Process initiated: releasing iOS staging builds (' + Time.new.to_s + ')',
+	# 		slack_url: 'https://hooks.slack.com/services/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',
+	# 		default_payloads: []
+	# 	)
+	# end
+
 	desc 'Push all staging builds to the TestFlight'
 	lane :beta do
-
-		slack(
-			message: 'Process initiated: releasing iOS staging builds (' + Time.new.to_s + ')',
-			slack_url: 'https://hooks.slack.com/services/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',
-			default_payloads: []
-		)
 
 		['MT-SB-Stage', 'MT-SB-Stage'].each do |scheme|
 
@@ -49,7 +51,9 @@ platform :ios do
 
 	# after_all do |lane|
 	# 	slack(
-	# 		message: 'Successfully deployed new app'
+	# 		message: 'Process finished: releasing iOS staging builds (' + Time.new.to_s + ')',
+	# 		slack_url: 'https://hooks.slack.com/services/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',
+	# 		default_payloads: []
 	# 	)
 
 	# error do |lane, exception|

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>688384473882-klhfd7lfttn6cbs05eh03nrpkq42mvfr.apps.googleusercontent.com</string>
+	<string>688384473882-vfe7cbtu18oe3juet32r0oetrpefs54s.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.688384473882-klhfd7lfttn6cbs05eh03nrpkq42mvfr</string>
+	<string>com.googleusercontent.apps.688384473882-vfe7cbtu18oe3juet32r0oetrpefs54s</string>
 	<key>ANDROID_CLIENT_ID</key>
 	<string>688384473882-146gc3fv3152sd1r08rq1jjfgpg754j0.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
@@ -15,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>org.reactjs.native.mtsbonestage</string>
+	<string>org.reactjs.native.mtsbonestage.one</string>
 	<key>PROJECT_ID</key>
 	<string>mt-sb1</string>
 	<key>STORAGE_BUCKET</key>
@@ -31,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:688384473882:ios:2dbb31ae3d9cbd0f694aa3</string>
+	<string>1:688384473882:ios:a5c6e56e0b9207e6694aa3</string>
 	<key>DATABASE_URL</key>
 	<string>https://mt-sb1.firebaseio.com</string>
 </dict>
