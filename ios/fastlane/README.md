@@ -16,11 +16,11 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
-### ios beta
+### ios stage
 ```
-fastlane ios beta
+fastlane ios stage
 ```
-Push all staging builds to the TestFlight
+
 
 ----
 

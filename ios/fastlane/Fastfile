@@ -1,17 +1,16 @@
+fastlane_require 'dotenv'
+
 default_platform(:ios)
 
 platform :ios do
 
-	# before_all do
-	# 	slack(
-	# 		message: 'Process initiated: releasing iOS staging builds (' + Time.new.to_s + ')',
-	# 		slack_url: 'https://hooks.slack.com/services/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',
-	# 		default_payloads: []
-	# 	)
-	# end
+	team_id = CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
 
-	desc 'Push all staging builds to the TestFlight'
-	lane :beta do
+	before_all do
+		Dotenv.overload '.env.secret'
+	end
+
+	lane :stage do
 
 		['MT-SB-Stage', 'MT-SB1-Stage', 'MT-SB2-Stage', 'MT-SB3-Stage'].each do |scheme|
 
@@ -19,21 +18,15 @@ platform :ios do
 			appVersion = get_version_number_from_plist(target: scheme)
 	
 			appIdentifier = get_product_bundle_id(project_filepath: '../ios/MT.xcodeproj', scheme: scheme)
-	
 			appName = get_info_plist_value(path: './' + scheme + '/' + scheme + '-Info.plist', key: 'CFBundleDisplayName')
 
 			match(type: 'appstore', app_identifier: appIdentifier)
-
-			gym(
-				scheme: scheme,
-				export_team_id: '89FSMT35PK'
-			)
-
+			gym(scheme: scheme)
 			pilot(username: 'eugene@theleanapps.com')
 
 			slack(
 				message: ' ' + appName + ' Released',
-				slack_url: 'https://hooks.slack.com/services/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',
+				slack_url: ENV['SLACK_URL'],
 				payload: {
 					'' => '',
 					'○ Bundle ID' => appIdentifier,
@@ -41,29 +34,17 @@ platform :ios do
 					'○ Build Number' => buildNumber,
 					'○ App Version' => appVersion,
 				},
-				default_payloads: [:last_git_commit]
 			)
 
 		end
 
-		slack(
-			message: 'Process finished: releasing iOS staging builds (' + Time.new.to_s + ')',
-			slack_url: 'https://hooks.slack.com/services/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',
-			default_payloads: []
-		)
-
 	end
 
-	# after_all do |lane|
-	# 	slack(
-	# 		message: 'Process finished: releasing iOS staging builds (' + Time.new.to_s + ')',
-	# 		slack_url: 'https://hooks.slack.com/services/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',
-	# 		default_payloads: []
-	# 	)
+	error do |lane, exception|
+		slack(
+			message: exception.message,
+			success: false
+		)
+	end
 
-	# error do |lane, exception|
-	# 	slack(
-	# 		message: exception.message,
-	# 		success: false
-	# 	)
 end
