@@ -22,10 +22,13 @@ platform :ios do
 
 			match(type: 'appstore', app_identifier: appIdentifier, readonly: true)
 	
+			enable_automatic_code_signing(path: '../ios/MT.xcodeproj')
+
 			gym(
 				scheme: scheme,
 				configuration: 'Release',
 				export_method: 'app-store',
+				export_xcargs: '-allowProvisioningUpdates',
 			)
 	
 			pilot(username: 'eugene@theleanapps.com')
