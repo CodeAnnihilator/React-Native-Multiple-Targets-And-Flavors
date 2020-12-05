@@ -28,7 +28,11 @@ platform :ios do
 				scheme: scheme,
 				configuration: 'Release',
 				export_method: 'app-store',
+<<<<<<< HEAD
 				export_xcargs: '-allowProvisioningUpdates',
+=======
+				export_xcargs: '-allowProvisioningUpdates'
+>>>>>>> ea0239647a82088033a78fe4f6df1b300430aabd
 			)
 	
 			pilot(username: 'eugene@theleanapps.com')
