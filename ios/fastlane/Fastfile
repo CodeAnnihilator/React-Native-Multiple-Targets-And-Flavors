@@ -19,29 +19,9 @@ platform :ios do
 	
 			appIdentifier = get_product_bundle_id(project_filepath: '../ios/MT.xcodeproj', scheme: scheme)
 			appName = get_info_plist_value(path: './' + scheme + '/' + scheme + '-Info.plist', key: 'CFBundleDisplayName')
-			matchProfile = 'match AppStore ' + appIdentifier
 
 			match(type: 'appstore', app_identifier: appIdentifier, readonly: true)
-
-			settings_to_override = {
-				:BUNDLE_IDENTIFIER => appIdentifier,
-				:PROVISIONING_PROFILE_SPECIFIER => matchProfile,
-				:DEVELOPMENT_TEAM => 'Stramplerbande GmbH'
-			}
-
-			gym(
-				scheme: scheme,
-				workspace: '../ios/MT.xcodeproj',
-				configuration: 'Release',
-				export_method: 'app-store',
-				xcargs: settings_to_override,
-				export_options: {
-					provisioningProfiles: { 
-						appIdentifier => matchProfile
-					}
-				}
-			)
-	
+			gym(scheme: scheme)
 			pilot(username: 'eugene@theleanapps.com')
 
 			slack(

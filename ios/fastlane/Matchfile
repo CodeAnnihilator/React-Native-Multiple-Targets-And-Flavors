@@ -2,7 +2,7 @@ git_url("git@bitbucket.org:Code-Annihilator/secret_creds_fastlane.git")
 
 storage_mode("git")
 
-type("development") # The default type, can be: appstore, adhoc, enterprise or development
+type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
 
 # app_identifier(["tools.fastlane.app", "tools.fastlane.app2"])
 username("eugene@theleanapps.com") # Your Apple Developer Portal username
