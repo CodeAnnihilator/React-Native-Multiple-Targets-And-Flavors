@@ -20,7 +20,7 @@ platform :ios do
 			appIdentifier = get_product_bundle_id(project_filepath: '../ios/MT.xcodeproj', scheme: scheme)
 			appName = get_info_plist_value(path: './' + scheme + '/' + scheme + '-Info.plist', key: 'CFBundleDisplayName')
 
-			match(type: 'appstore', app_identifier: appIdentifier)
+			match(type: 'appstore', app_identifier: appIdentifier, readonly: true)
 			gym(scheme: scheme)
 			pilot(username: 'eugene@theleanapps.com')
 
