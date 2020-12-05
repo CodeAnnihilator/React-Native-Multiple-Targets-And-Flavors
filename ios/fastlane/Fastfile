@@ -21,7 +21,13 @@ platform :ios do
 			appName = get_info_plist_value(path: './' + scheme + '/' + scheme + '-Info.plist', key: 'CFBundleDisplayName')
 
 			match(type: 'appstore', app_identifier: appIdentifier, readonly: true)
-			gym(scheme: scheme)
+	
+			gym(
+				scheme: scheme,
+				configuration: 'Release',
+				export_method: 'app-store',
+			)
+	
 			pilot(username: 'eugene@theleanapps.com')
 
 			slack(
