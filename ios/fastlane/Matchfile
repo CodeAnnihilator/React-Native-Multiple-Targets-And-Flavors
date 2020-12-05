@@ -1,4 +1,4 @@
-git_url("https://bitbucket.org/Code-Annihilator/secret_creds_fastlane")
+git_url("git@bitbucket.org:Code-Annihilator/secret_creds_fastlane.git")
 
 storage_mode("git")
 
