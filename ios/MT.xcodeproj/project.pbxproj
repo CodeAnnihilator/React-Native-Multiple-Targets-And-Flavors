@@ -55,12 +55,12 @@
 		35C8AEE52556B457002F9DBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35C8AEE22556B457002F9DBC /* GoogleService-Info.plist */; };
 		35C8AEE62556B457002F9DBC /* MT-SB3-Stage-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35C8AEE32556B457002F9DBC /* MT-SB3-Stage-Info.plist */; };
 		35C8AF592556BA90002F9DBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C8AF582556BA90002F9DBC /* Images.xcassets */; };
-		417CE8999A26DF88FDAAB155 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		417CE8999A26DF88FDAAB155 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		4D90BE92566E261EC879CA0B /* libPods-MT-MT-SB-Stage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 088E1D81E102027A79A8C5D7 /* libPods-MT-MT-SB-Stage.a */; };
 		74F6275206CB061D1DEA63E7 /* libPods-MT.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C09176D37510E0634D1A96 /* libPods-MT.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		85ED68ADE3BABD16BE1E4CD6 /* libPods-MT-MTTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3E13FE4EEFE2F51C5952335 /* libPods-MT-MTTests.a */; };
-		90F1881FA2165B5EE8FFBF92 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		90F1881FA2165B5EE8FFBF92 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		AA32AB82B62D57AE37A032A2 /* libPods-MT-MT-SB-Dev.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5986321E75C4B7EB205FAB43 /* libPods-MT-MT-SB-Dev.a */; };
 		BAE77E76D47FEAD6A7F0F5C8 /* libPods-MT-MT-SB1-Prod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCD31CF1E48337109A0D483 /* libPods-MT-MT-SB1-Prod.a */; };
 		BC50B143B199C0EC099C3474 /* libPods-MT-MT-SB1-Stage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E885AB02C6EA529E75E729 /* libPods-MT-MT-SB1-Stage.a */; };
@@ -173,8 +173,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				417CE8999A26DF88FDAAB155 /* (null) in Frameworks */,
-				90F1881FA2165B5EE8FFBF92 /* (null) in Frameworks */,
+				417CE8999A26DF88FDAAB155 /* BuildFile in Frameworks */,
+				90F1881FA2165B5EE8FFBF92 /* BuildFile in Frameworks */,
 				BEC14ACF747FECEB6F9EC478 /* libPods-MT.a in Frameworks */,
 				74F6275206CB061D1DEA63E7 /* libPods-MT.a in Frameworks */,
 			);
@@ -745,6 +745,7 @@
 					};
 					35C8AE112556AD4D002F9DBC = {
 						DevelopmentTeam = 89FSMT35PK;
+						ProvisioningStyle = Manual;
 					};
 					35C8AE2D2556AD66002F9DBC = {
 						DevelopmentTeam = 89FSMT35PK;
@@ -951,11 +952,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MT/Pods-MT-resources.sh",
+				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp 2.bundle",
 				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp 2.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
@@ -971,11 +974,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MT-MT-SB1-Prod/Pods-MT-MT-SB1-Prod-resources.sh",
+				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp 2.bundle",
 				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp 2.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
@@ -1174,11 +1179,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MT-MT-SB-Dev/Pods-MT-MT-SB-Dev-resources.sh",
+				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp 2.bundle",
 				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp 2.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
@@ -1307,11 +1314,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MT-MT-SB-Stage/Pods-MT-MT-SB-Stage-resources.sh",
+				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp 2.bundle",
 				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp 2.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
@@ -1422,11 +1431,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MT-MT-SB1-Stage/Pods-MT-MT-SB1-Stage-resources.sh",
+				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp 2.bundle",
 				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp 2.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
@@ -1537,11 +1548,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MT-MT-SB2-Stage/Pods-MT-MT-SB2-Stage-resources.sh",
+				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp 2.bundle",
 				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp 2.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
@@ -1652,11 +1665,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MT-MT-SB3-Stage/Pods-MT-MT-SB3-Stage-resources.sh",
+				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp 2.bundle",
 				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp 2.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
@@ -1894,11 +1909,13 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-MT-MTTests/Pods-MT-MTTests-resources.sh",
+				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp 2.bundle",
 				"${PODS_ROOT}/FirebaseFirestore/FirebaseFirestore/Resources/gRPCCertificates-Cpp.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/React-Core/AccessibilityResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp 2.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AccessibilityResources.bundle",
 			);
@@ -2385,6 +2402,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "MT-SB-Stage/MT-SB-Stage.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 89FSMT35PK;
 				ENABLE_BITCODE = NO;
@@ -2397,6 +2416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.mtsbstage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development org.reactjs.native.mtsbstage";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2411,6 +2431,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "MT-SB-Stage/MT-SB-Stage.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 89FSMT35PK;
 				INFOPLIST_FILE = "MT-SB-Stage/MT-SB-Stage-Info.plist";
@@ -2422,6 +2444,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.mtsbstage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development org.reactjs.native.mtsbstage";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";

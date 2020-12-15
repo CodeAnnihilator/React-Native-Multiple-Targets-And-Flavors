@@ -16,6 +16,11 @@ or alternatively using `brew install fastlane`
 
 # Available Actions
 ## iOS
+### ios certificates
+```
+fastlane ios certificates
+```
+Download and install certificates and provisioning profiles for all configurations: development, AppStore and AdHoc
 ### ios stage
 ```
 fastlane ios stage

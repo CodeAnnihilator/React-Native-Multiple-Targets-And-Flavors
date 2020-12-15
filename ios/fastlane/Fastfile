@@ -10,6 +10,13 @@ platform :ios do
 		Dotenv.overload '.env.secret'
 	end
 
+	desc 'Download and install certificates and provisioning profiles for all configurations: development, AppStore and AdHoc'
+	lane :certificates do 
+		match(type: 'development')
+		match(type: 'appstore')
+		match(type: 'adhoc')
+	end
+
 	lane :stage do
 
 		['MT-SB-Stage', 'MT-SB1-Stage', 'MT-SB2-Stage', 'MT-SB3-Stage'].each do |scheme|
@@ -20,8 +27,23 @@ platform :ios do
 			appIdentifier = get_product_bundle_id(project_filepath: '../ios/MT.xcodeproj', scheme: scheme)
 			appName = get_info_plist_value(path: './' + scheme + '/' + scheme + '-Info.plist', key: 'CFBundleDisplayName')
 
+			cocoapods(clean_install: true)
+
+			match(type: 'development', app_identifier: appIdentifier, readonly: true)
 			match(type: 'appstore', app_identifier: appIdentifier, readonly: true)
-			gym(scheme: scheme)
+
+			gym(
+				scheme: scheme,
+				# xcargs: '-allowProvisioningUpdates',
+				export_method: 'app-store',
+				export_options: {
+					provisioningProfiles: {
+						appIdentifier => 'match Development ' + appIdentifier,
+						appIdentifier => 'match AppStore ' + appIdentifier
+					}
+				}
+			)
+
 			pilot(username: 'eugene@theleanapps.com')
 
 			slack(
