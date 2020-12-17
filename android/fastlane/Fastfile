@@ -1,17 +1,15 @@
+fastlane_require 'dotenv'
+
 default_platform(:android)
 
 platform :android do
 
-	# before_all do
-	# 	gradle(task: 'clean')
-	# end
+	before_all do
+		Dotenv.overload '.env.secret'
+	end
 
-	desc 'test android lane'
-	lane :beta do
-
-		# gradle(
-		# 	task: 'whitelabelRelease'
-		# )
+	desc 'send stage builds to android beta'
+	lane :stage do
 
 		begin
 
@@ -20,25 +18,42 @@ platform :android do
 			file = File.read '../buildsystem/whitelabels.json'
 			data = JSON.parse(file)
 
-			data['list'].each do |whitelabel|
-				begin
-					puts "package_name: com.mt.#{whitelabel['application_id_suffix']}"
-					puts "skip_upload_images: true"
-					puts "skip_upload_screenshots: true"
-					puts "apk: app/build/outputs/apk/app-#{whitelabel['flavor_name']}-release.apk"
-					puts '--NEXT--'
-					rescue => ex
-						puts ex
-						slack(
-							message: "Error uploading => #{/([^\/]*)$/.match(apk)} #{get_version_name} - #{get_version_code}: #{ex}",
-							slack_url: 'https://hooks.slack.com/services/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',
-							success: false,
-							default_payloads: [:git_branch, :lane, :test_result]
-						)
-				end
+			data['stage'].each do |whitelabel|
+				suffix = whitelabel['application_id_suffix']
+				flavourName = whitelabel['flavor_name']
+				gradle(task: 'clean')
+				gradle(
+					task: "assembleMt#{suffix}",
+					build_type: 'Release',
+					properties: {
+						'android.injected.signing.store.file' => ENV['BITRISEIO_ANDROID_KEYSTORE_URL'],
+						'android.injected.signing.store.password' => ENV['ANDROID_KEYSTORE_PASSWORD'],
+						'android.injected.signing.key.alias' => ENV['ANDROID_KEY_ALIAS'],
+						'android.injected.signing.key.password' => ENV['ANDROID_KEYSTORE_PASSWORD'],
+					}
+				)
+				supply(
+					package_name: "com.mt.#{suffix}",
+					skip_upload_images: true,
+					skip_upload_screenshots: true,
+					json_key: ENV['BITRISEIO_SERVICE_ACCOUNT_JSON_KEY_URL'],
+					apk: "app/build/outputs/apk/#{flavourName}/release/app-#{flavourName}-release.apk"
+				)
 			end
 		rescue => ex
 			puts ex
 		end
 	end
 end
+
+
+# begin
+# rescue => ex
+# 	puts ex
+# 	slack(
+# 		message: "Error uploading => #{/([^\/]*)$/.match(apk)} #{get_version_name} - #{get_version_code}: #{ex}",
+# 		slack_url: 'https://hooks.slack.com/services/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',
+# 		success: false,
+# 		default_payloads: [:git_branch, :lane, :test_result]
+# 	)
+# end
